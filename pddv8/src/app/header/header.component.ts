@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit {
   public info = 'https://www.baidu.com'
 
   public jump = () => {
-    window.location.href = this.info
+    // window.location.href = this.info
+    this.route.navigate(['/input'])
   }
 
 }
