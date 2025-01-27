@@ -1,0 +1,7 @@
+<div *ngFor="let item of testData;let index = index" [ngStyle]="flexStyle">
+  <p>{{index}}</p>
+  <p>{{item.name}}</p>
+  <p>{{item.age}}</p>
+</div>
+
+<p *ngIf="!testData.length">没有更多了</p>
