@@ -3,7 +3,8 @@
   <nav>
     <!-- <a [href]="info" [ngStyle]="{'color':'red'}">信息展示(ClientInfo)</a>
     <a (click)="jump()" [ngClass]="{'first': true, 'second': true, 'third': false}">信息录入(ClientInput)</a> -->
-    <a [routerLink]="['/info']" >信息展示(ClientInfo)</a>
-    <a (click)="jump()" >信息录入(ClientInput)</a>
+    <!-- <a [routerLink]="['/info']" class="active">信息展示(ClientInfo)</a>
+    <a (click)="jump()" >信息录入(ClientInput)</a> -->
+    <a *ngFor="let item of links" [routerLink]="[item.sref]" routerLinkActive="active">{{item.name}}</a>
   </nav>
 </div>

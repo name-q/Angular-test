@@ -20,4 +20,15 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(['/input'])
   }
 
+  public links = [
+    {
+      sref:'/info',
+      name:'信息展示(ClientInfo)'
+    },
+    {
+      sref:'/input',
+      name:'信息录入(ClientInput)'
+    },
+  ]
+
 }
