@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-input',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routeInfo: ActivatedRoute) { }
 
   flexStyle = {
     display: 'flex',
@@ -28,6 +29,10 @@ export class InputComponent implements OnInit {
     setTimeout(() => {
       this.testData = []
     }, 3000)
+
+    // 获取/:id的路由参数
+    let { id } = this.routeInfo.snapshot.params
+    console.log(id, '<<<<id')
   }
 
 

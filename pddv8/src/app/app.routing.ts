@@ -6,7 +6,11 @@ const routes: Routes = [
     loadChildren: () => import('./input/input.module').then(m => m.InputModule)
   },
   {
-    path: 'info',
+    path: 'input/:id',
+    loadChildren: () => import('./input/input.module').then(m => m.InputModule)
+  },
+  {
+    path: 'info/:id',
     loadChildren: () => import('./info/info.module').then(m => m.InfoModule)
   },
   { path: '', redirectTo: '/input', pathMatch: 'full' }, // 默认重定向到 'input'
