@@ -33,6 +33,10 @@ export class InputComponent implements OnInit {
     // 获取/:id的路由参数
     let { id } = this.routeInfo.snapshot.params
     console.log(id, '<<<<id')
+    
+    let { queryParams } = this.routeInfo.snapshot
+    console.log(queryParams, '<<<<queryParams')
+
   }
 
 
