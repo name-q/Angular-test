@@ -1,0 +1,22 @@
+<!-- 双向绑定的本质 -->
+<p>姓名：{{name}}</p>
+
+<input type="text" [value]="name" (input)="name = $event.target.value" />
+<br />
+
+<!-- ngModel 实现双向绑定-->
+<input type="text" [(ngModel)]="name" />
+<!-- 
+那么ngModel本质就是
+[ngModel]="@input" （ngModelChange)="@input = $event.target.value"
+组合成的[(语法糖)]
+-->
+<br />
+<br />
+<br />
+
+<!-- 实现ngModel -->
+<p>子组件初始年龄29</p>
+<p>年龄：{{age}}</p>
+<button (click)="changeAge()">年龄 +1</button>
+<ng-content></ng-content>

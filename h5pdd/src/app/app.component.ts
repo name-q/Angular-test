@@ -7,6 +7,8 @@ import { ImageSlider, TopMenu } from './components';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
+  public parentComponentAge = 100;
+
   title = 'h5pdd';
 
   menus: TopMenu[] = [
