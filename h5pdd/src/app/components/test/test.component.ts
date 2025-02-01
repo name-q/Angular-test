@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { EmojiSuccess, Confirmable } from '../../shared/decorators/index'
 
 @Component({
   selector: 'app-test',
@@ -6,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./test.component.less']
 })
 export class TestComponent implements OnInit {
-
+  @EmojiSuccess()
   name:string = 'name-q'
 
   private _age:number = 29
@@ -29,6 +30,7 @@ export class TestComponent implements OnInit {
  
 
 
+  @Confirmable('Are you sure?')
   changeAge() {
     this.age += 1; // 触发 setter，导致 ageChange.emit
   }
