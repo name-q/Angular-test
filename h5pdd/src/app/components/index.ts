@@ -1,3 +1,3 @@
-export * from './scrollable-tab'
-export * from './image-slider';
+export * from '../shared/scrollable-tab'
+export * from '../shared/image-slider';
 export * from './test';

@@ -4,18 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ImageSliderComponent, ScrollableTabComponent, TestComponent } from './components';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [	
     AppComponent,
-    ScrollableTabComponent,
-    ImageSliderComponent,
     TestComponent,
+    ImageSliderComponent,
+    ScrollableTabComponent
    ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
