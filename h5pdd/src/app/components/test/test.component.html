@@ -19,4 +19,11 @@
 <p>子组件初始年龄29</p>
 <p>年龄：{{age}}</p>
 <button (click)="changeAge()">年龄 +1</button>
+
+<br>
+
+<span [textContent]="time | formatDate: 'YYYY-MM-dd HH:mm:ss sss'"></span>
+
+<br>
+<span #timeRef></span>
 <ng-content></ng-content>

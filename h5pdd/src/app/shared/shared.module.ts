@@ -5,6 +5,7 @@ import { ScrollableTabComponent } from './scrollable-tab';
 import { ImageSliderComponent } from './image-slider';
 import { HorizontalGrideComponent } from './horizontal-gride';
 import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } from './directives';
+import { FormatDatePipe } from './pipes';
 
 
 
@@ -15,7 +16,8 @@ import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } fro
     HorizontalGrideComponent,
     GridItemDirective,
     GridItemImageDirective,
-    GridItemTitleDirective
+    GridItemTitleDirective,
+    FormatDatePipe,
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } fro
     HorizontalGrideComponent,
     GridItemDirective,
     GridItemImageDirective,
-    GridItemTitleDirective
+    GridItemTitleDirective,
+    FormatDatePipe,
   ]
 })
 export class SharedModule { }
