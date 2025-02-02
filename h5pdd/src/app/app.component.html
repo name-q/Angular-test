@@ -1,9 +1,13 @@
-<app-scrollable-tab *ngIf="showTab" [menus]="menus" (onSelectMenu)="handleTabSelected($event)"></app-scrollable-tab>
-<button (click)="handleReverseShowTab()">显隐scrollable-tab</button>
 
-<app-image-slider [sliders]="sliders">
-</app-image-slider>
 
+<router-outlet></router-outlet>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<h3>test component</h3>
 <app-test [(age)]="parentComponentAge">
     <p>父组件的传入年龄：{{ parentComponentAge }}</p>
 </app-test>

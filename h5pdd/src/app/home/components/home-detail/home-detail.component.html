@@ -1,0 +1,27 @@
+<div *ngIf=" selectTabLink === 'hot' else other">
+  <app-image-slider
+  [sliders] = "sliders">
+  </app-image-slider>
+
+  <app-horizontal-gride style="margin-left: 5px;">
+  <div appGridItem *ngFor="let item of channels" >
+    <img [src]="item.icon" alt="" [appGridItemImg] = "'2rem'">
+    <span appGridItemTitle>{{item.title}}</span>
+  </div>
+  </app-horizontal-gride>
+
+  <app-horizontal-gride style="margin-left: 5px;">
+  <div appGridItem *ngFor="let item of channels" >
+    <img [src]="item.icon" alt="" [appGridItemImg] = "'2rem'">
+    <span appGridItemTitle>{{item.title}}</span>
+  </div>
+  </app-horizontal-gride>
+
+</div>
+
+<ng-template #other>
+其他页面
+</ng-template>
+
+
+
