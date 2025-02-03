@@ -1,6 +1,6 @@
-<div *ngIf=" selectTabLink === 'hot' else other">
+<div *ngIf=" (selectTabLink$ | async) === 'hot' else other">
   <app-image-slider
-  [sliders] = "sliders">
+  [sliders] = "sliders$ | async">
   </app-image-slider>
 
   <app-horizontal-gride style="margin-left: 5px;">
