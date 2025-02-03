@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+const mockData = require('../utils/mockData');
+
 router.post('/mock-post', (req, res) => {
-  const { name, age } = req.body;
   res.json({
     message: 'This is a mock POST response',
-    data: { name, age }
+    data: mockData.getTabList()
   });
 });
 

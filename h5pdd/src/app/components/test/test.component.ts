@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, NgZone, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { EmojiSuccess, Confirmable } from '../../shared/decorators/index'
-import FormatDatePipe from 'src/app/shared/pipes/format-date.pipe'
 
 @Component({
   selector: 'app-test',
