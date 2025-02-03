@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { interval, Observable } from 'rxjs';
 import { map, takeWhile, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-count-down',
   templateUrl: './count-down.component.html',
-  styleUrls: ['./count-down.component.less']
+  styleUrls: ['./count-down.component.less'],
 })
 export class CountDownComponent implements OnInit {
 
@@ -21,11 +21,10 @@ export class CountDownComponent implements OnInit {
   }
 
   private diffInSec = (startDate: Date, futureDate: Date): number => {
-    console.log(startDate, futureDate);
     const diff = futureDate.getTime() - startDate.getTime();
     return Math.floor(diff / 1000);
   }
-
+  
   private getCountDownObservable$ = (startDate: Date, futureDate: Date): Observable<string> => {
     return interval(1000).pipe(
       map(elapse => this.diffInSec(startDate, futureDate) - elapse),
