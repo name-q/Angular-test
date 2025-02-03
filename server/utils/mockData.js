@@ -27,6 +27,53 @@ module.exports = {
             }
         ]
     ),
+    getChannelList: () => (
+        [
+            {
+                id: 1,
+                icon: 'assets/icons/refund.png',
+                title: '限时秒杀',
+                link: 'hot'
+            },
+            {
+                id: 2,
+                icon: 'assets/icons/fav_store.png',
+                title: '限时秒杀',
+                link: 'hot'
+            },
+            {
+                id: 3,
+                icon: 'assets/icons/membership.png',
+                title: '限时秒杀',
+                link: 'hot'
+            },
+            {
+                id: 4,
+                icon: 'assets/icons/fav_store.png',
+                title: '限时秒杀',
+                link: 'hot'
+            },
+            {
+                id: 5,
+                icon: 'assets/icons/coupon.png',
+                title: '限时秒杀',
+                link: 'hot'
+            },
+            {
+                id: 6,
+                icon: 'assets/icons/membership.png',
+                title: '限时秒杀',
+                link: 'hot'
+            },
+            {
+                id: 7,
+                icon: 'assets/icons/coupon.png',
+                title: '限时秒杀',
+                link: 'hot'
+            }
+
+        ]
+    ),
     getTabList: () => (
         [
             {

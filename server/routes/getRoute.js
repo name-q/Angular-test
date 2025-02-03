@@ -10,4 +10,11 @@ router.get('/api/getBannerList', (req, res) => {
   });
 });
 
+router.get('/api/getChannelList', (req, res) => {
+  res.json({
+    message: 'This is a mock GET response',
+    data: mockData.getChannelList()
+  });
+});
+
 module.exports = router;
