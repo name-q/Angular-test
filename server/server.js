@@ -5,13 +5,11 @@ const port = 3210;
 // 允许处理 JSON 格式的 POST 请求
 app.use(express.json());
 
-// 导入路由
-const getRoute = require('./routes/getRoute');
-const postRoute = require('./routes/postRoute');
+// 导入所有路由
+const routes = require('./routes');
 
-// 使用路由
-app.use(getRoute);
-app.use(postRoute);
+// 将路由挂载到应用上
+app.use(routes);
 
 // 启动服务
 app.listen(port, () => {
