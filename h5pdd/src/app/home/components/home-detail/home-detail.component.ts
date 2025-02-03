@@ -18,6 +18,12 @@ export class HomeDetailComponent implements OnInit, OnDestroy {
   channels: Channel[] = [];
 
   selectTabLink$: Observable<string>;
+
+  startDate = new Date();
+  futureDate = new Date(new Date().getTime() + 3600 * 1000 * 24 * 7);
+
+
+
   constructor(
     private router: ActivatedRoute,
     private cd: ChangeDetectorRef,
