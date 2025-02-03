@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Channel, ImageSlider } from 'src/app/components';
+import { HomeService } from 'src/app/shared/services';
 
 @Component({
   selector: 'app-home-detail',
@@ -15,7 +16,11 @@ export class HomeDetailComponent implements OnInit {
   channels: Channel[] = [];
 
   selectTabLink = '';
-  constructor(private router: ActivatedRoute, private cd: ChangeDetectorRef) { }
+  constructor(
+    private router: ActivatedRoute, 
+    private cd: ChangeDetectorRef,
+    private service: HomeService
+  ) { }
 
   ngOnInit() {
     // 一次获取
@@ -25,6 +30,19 @@ export class HomeDetailComponent implements OnInit {
       this.selectTabLink = params.get('tabLink');
       // 手动提醒变化 （非@input变化 onPush模式下，不会自动更新）
       this.cd.markForCheck()
+    })
+    this.service.getBanners().subscribe(res => {
+      if(res.data) {
+        this.sliders = res.data;
+        this.cd.markForCheck()
+      }
+    })
+
+    this.service.getChannels().subscribe(res => {
+      if(res.data) {
+        this.channels = res.data;
+        this.cd.markForCheck()
+      }
     })
   }
 
