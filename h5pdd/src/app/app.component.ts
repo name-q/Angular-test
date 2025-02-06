@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, switchMap, tap } from 'rxjs/operators';
 import { TabItem } from './shared/footer';
 @Component({
   selector: 'app-root',
@@ -21,20 +21,28 @@ export class AppComponent implements OnInit {
     private router: Router,
   ) { }
   ngOnInit(): void {
-    this.selectedIndex$ = this.router.events.pipe(
-      // tap(e => console.log(e, 'tap')),
-      filter(ev => ev instanceof NavigationEnd),
-      map((e: NavigationEnd) => {
-        const arr = e.url.split('/');
-        // console.log(arr);
-        return arr.length > 1 ? arr[1] : 'home';
-      }),
-      map(path => this.getSelectedIndex(path))
-    );
+    // this.selectedIndex$ = this.router.events.pipe(
+    //   // tap(e => console.log(e, 'tap')),
+    //   filter(ev => ev instanceof NavigationEnd),
+    //   map((e: NavigationEnd) => {
+    //     const arr = e.url.split('/');
+    //     // console.log(arr);
+    //     return arr.length > 1 ? arr[1] : 'home';
+    //   }),
+    //   map(path => this.getSelectedIndex(path))
+    // );
     this.path$ = this.router.events.pipe(filter(ev => ev instanceof NavigationEnd), map((e: NavigationEnd) => {
       const arr = e.url.split('/');
+      console.log(arr, '<<<>>>');
+      console.log(arr[1]);
       return arr[1];
     }));
+
+    this.selectedIndex$ = this.path$.pipe(
+      switchMap(path => {
+        return path ? path : 'home'
+      }), map(path => this.getSelectedIndex(path))
+    )
   }
 
   getSelectedIndex(tab: string) {
