@@ -12,4 +12,4 @@
     <p>父组件的传入年龄：{{ parentComponentAge }}</p>
 </app-test> -->
 
-<app-footer></app-footer>
+<app-footer [ngStyle]="{'display': (path$ | async) !== 'products' ? '' : 'none'}" [selectedIndex]="selectedIndex$ | async" [selectedIndex$]="selectedIndex$" (tabSelected)="handleTabSelected($event)"></app-footer>
