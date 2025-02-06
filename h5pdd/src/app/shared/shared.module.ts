@@ -7,6 +7,7 @@ import { HorizontalGrideComponent } from './horizontal-gride';
 import { GridItemDirective, GridItemImageDirective, GridItemTitleDirective } from './directives';
 import { FormatDatePipe } from './pipes';
 import { CountDownComponent } from './count-down/count-down.component';
+import { FooterComponent } from './footer';
 
 
 
@@ -15,6 +16,7 @@ import { CountDownComponent } from './count-down/count-down.component';
     ScrollableTabComponent,
     ImageSliderComponent,
     HorizontalGrideComponent,
+    FooterComponent,
     CountDownComponent,
     GridItemDirective,
     GridItemImageDirective,
@@ -31,6 +33,7 @@ import { CountDownComponent } from './count-down/count-down.component';
     ScrollableTabComponent,
     ImageSliderComponent,
     HorizontalGrideComponent,
+    FooterComponent,
     CountDownComponent,
     GridItemDirective,
     GridItemImageDirective,

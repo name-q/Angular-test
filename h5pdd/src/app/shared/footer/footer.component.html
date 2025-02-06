@@ -1,0 +1,9 @@
+<app-horizontal-gride [cols]="5" [displayCols]="5">
+  <div (click)="toggleSelected(i)" appGridItem *ngFor="let item of tabItems; let i = index">
+    <img [src]="item.selectedIcon" *ngIf="i === selectedIndex; else noSelect" alt="" [appGridItemImg]="'2rem'">
+    <ng-template #noSelect>
+      <img [src]="item.icon" alt="" [appGridItemImg]="'2rem'">
+    </ng-template>
+    <span appGridItemTitle>{{item.title}}</span>
+  </div>
+</app-horizontal-gride>

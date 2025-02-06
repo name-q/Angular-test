@@ -8,7 +8,7 @@ export class GridItemDirective {
   @HostBinding('style.grid-template-areas') template = `'image' 'title'`;
   @HostBinding('style.place-items') align = 'center';
   @HostBinding('style.width') width = '3rem';
-  @HostBinding('style.margin-right') right = '23px';
+  @HostBinding('style.flex') flex = '1';
   // margin-right: 5px;
 
   // constructor(private elr:ElementRef, private rd2:Renderer2){
